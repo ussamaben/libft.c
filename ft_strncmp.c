@@ -6,12 +6,12 @@
 /*   By: obenaaro <obenaaro@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 17:21:01 by obenaaro          #+#    #+#             */
-/*   Updated: 2026/10/16 17:23:22 by obenaaro         ###   ########.fr       */
+/*   Updated: 2026/10/21 20:47:13 by obenaaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-size_t	ft_strncmp(char *s1, char *s2,size_t n)
+size_t	ft_strncmp(const char *s1,const char *s2,size_t n)
 {
 	size_t	i;
 

@@ -6,12 +6,12 @@
 /*   By: obenaaro <obenaaro@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 12:48:55 by obenaaro          #+#    #+#             */
-/*   Updated: 2026/10/16 18:12:01 by obenaaro         ###   ########.fr       */
+/*   Updated: 2026/10/21 20:54:10 by obenaaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-void *ft_memset(void *s, int x, size_t n)
+void *ft_memset(void *s, int c, size_t n)
 {
     size_t i;
     unsigned char *ptr;

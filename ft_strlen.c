@@ -6,16 +6,16 @@
 /*   By: obenaaro <obenaaro@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 10:40:58 by obenaaro          #+#    #+#             */
-/*   Updated: 2026/10/17 10:41:10 by obenaaro         ###   ########.fr       */
+/*   Updated: 2026/10/21 20:38:31 by obenaaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_len(char *str)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
 	i = 0;
-	while (str[i])
+	while (s[i])
 		i++;
 	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: obenaaro <obenaaro@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/18 15:48:14 by obenaaro          #+#    #+#             */
-/*   Updated: 2026/10/18 19:21:34 by obenaaro         ###   ########.fr       */
+/*   Updated: 2026/10/21 21:08:02 by obenaaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void free_split(char **s,size_t i)
     }
     free(s);
 }
-char **ft_split(char const *s,char c)
+char **ft_split(char *s,char c)
 {
     char **result;
     size_t i;

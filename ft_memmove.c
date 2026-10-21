@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memove.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obenaaro <obenaaro@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 15:00:26 by obenaaro          #+#    #+#             */
-/*   Updated: 2026/10/14 18:01:20 by obenaaro         ###   ########.fr       */
+/*   Updated: 2026/10/21 20:56:23 by obenaaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdio.h>
 
-void *ft_memove(void *dest, void const *src, size_t n)
+void *ft_memmove(void *dest, const void *src, size_t n)
 {
     unsigned char *ptrd;
     unsigned char *ptrs;

@@ -6,11 +6,11 @@
 /*   By: obenaaro <obenaaro@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 20:11:14 by obenaaro          #+#    #+#             */
-/*   Updated: 2026/10/17 00:44:22 by obenaaro         ###   ########.fr       */
+/*   Updated: 2026/10/21 21:06:10 by obenaaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int atoi(const char *str)
+int ft_atoi(const char *s)
 {
     int sign;
     size_t i;

@@ -6,11 +6,11 @@
 /*   By: obenaaro <obenaaro@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 12:34:19 by obenaaro          #+#    #+#             */
-/*   Updated: 2026/10/13 12:34:47 by obenaaro         ###   ########.fr       */
+/*   Updated: 2026/10/21 20:35:43 by obenaaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int c)
+int ft_isprint(int c)
 {
     if (c >= 32 && c <= 126)
         return(1);

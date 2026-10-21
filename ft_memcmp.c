@@ -6,11 +6,11 @@
 /*   By: obenaaro <obenaaro@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 17:52:25 by obenaaro          #+#    #+#             */
-/*   Updated: 2026/10/16 18:03:26 by obenaaro         ###   ########.fr       */
+/*   Updated: 2026/10/21 21:01:37 by obenaaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t	i;
     unsigned char *ptr1;

@@ -6,11 +6,11 @@
 /*   By: obenaaro <obenaaro@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 00:47:34 by obenaaro          #+#    #+#             */
-/*   Updated: 2026/10/17 00:57:04 by obenaaro         ###   ########.fr       */
+/*   Updated: 2026/10/21 21:04:40 by obenaaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_atoi(size_t nb, size_t size)
+void *ft_calloc(size_t nb, size_t size)
 {
     size_t i;
     char *ptr;

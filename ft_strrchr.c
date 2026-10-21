@@ -6,11 +6,11 @@
 /*   By: obenaaro <obenaaro@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 14:18:21 by obenaaro          #+#    #+#             */
-/*   Updated: 2026/10/16 14:56:00 by obenaaro         ###   ########.fr       */
+/*   Updated: 2026/10/21 20:59:04 by obenaaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strrchr(const char *str, int c)
+char *ft_strrchr(const char *s, int c)
 {
     unsigned char *p;
     size_t i;

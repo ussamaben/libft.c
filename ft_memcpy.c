@@ -6,14 +6,14 @@
 /*   By: obenaaro <obenaaro@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 19:44:33 by obenaaro          #+#    #+#             */
-/*   Updated: 2026/10/14 14:38:28 by obenaaro         ###   ########.fr       */
+/*   Updated: 2026/10/21 20:55:07 by obenaaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdio.h>
 
-void *ft_memcpy(void *dest, void const *src, size_t n)
+void *ft_memcpy(void *dest, const void *src, size_t n)
 {
     unsigned char *ptrd;
     unsigned char *ptrs;

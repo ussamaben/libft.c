@@ -6,11 +6,11 @@
 /*   By: obenaaro <obenaaro@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 18:56:42 by obenaaro          #+#    #+#             */
-/*   Updated: 2026/10/16 14:02:56 by obenaaro         ###   ########.fr       */
+/*   Updated: 2026/10/21 20:58:07 by obenaaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int ft_toupper(int c)
 {
     if (c >= 'a' && c <= 'z')
         return (c - 32 )
