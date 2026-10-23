@@ -10,29 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
+#include "libft.h"
 
-void *ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-    unsigned char *ptrd;
-    unsigned char *ptrs;
-    ptrs = (unsigned char *)src;
-    ptrd = (unsigned char *)dest;
-    size_t i;
-    i = 0;
-    while (i < n)
-    {
-        ptrd[i] = ptrs[i];
-        i++;
-    }
-    return(dest);
-}
+	size_t				i;
+	unsigned char		*d;
+	const unsigned char	*s;
 
-int main()
-{
-    char src[] = "coooco cava";
-    char dest;
-    ft_memcpy(&dest,&src, 5);
-    printf("%s",&dest);
+	if (!dest && !src)
+		return (NULL);
+	d = (unsigned char *)dest;
+	s = (const unsigned char *)src;
+	i = 0;
+	while (i < n)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (dest);
 }

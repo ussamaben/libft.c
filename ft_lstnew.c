@@ -10,14 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-    t_list *head = NULL;
-    head =  malloc((sizeof(t_list)));
-    if(!head)
-        return(NULL);
-    head->content = content;
-    head->next =NULL;
-    return(head);
+	t_list	*result;
+
+	result = malloc(sizeof(t_list));
+	if (!result)
+		return (NULL);
+	result->content = content;
+	result->next = NULL;
+	return (result);
 }

@@ -10,19 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_calloc(size_t nb, size_t size)
+#include "libft.h"
+
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-    size_t i;
-    char *ptr;
-    size_t tot;
-    tot = nb * size;
-    ptr = malloc(tot);
-    if(!ptr)
-        return(NULL);
-    while (i < tot)
-    {
-        ptr[i] = 0;
-        i++;
-    }
-    return(ptr);
+	void	*ptr;
+
+	ptr = malloc(nmemb * size);
+	if (ptr == 0)
+		return (NULL);
+	ft_bzero(ptr, nmemb * size);
+	return (ptr);
 }

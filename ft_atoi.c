@@ -10,27 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_atoi(const char *s)
-{
-    int sign;
-    size_t i;
-    int nb;
-    tot = 0;
-    i = 0;
-    sign = 1;
-    while (str[i] == ' ' || (str[i] >= 7 && str[i] <= 13))
-		i++;
-	while (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = nb * 10 + (str[i] - '0');
-		i++;
-	}
-	return (sign * nb);
+#include <stdio.h>
 
+int	ft_atoi(const char *s)
+{
+	int	i;
+	int	isneg;
+	int	rest;
+
+	i = 0;
+	isneg = 1;
+	rest = 0;
+	while (s[i] == ' ' || (s[i] >= 9 && s[i] <= 13))
+		i++;
+	if (s[i] == '-' || s[i] == '+')
+	{
+		if (s[i] == '-')
+		{
+			isneg *= -1;
+		}
+		i++;
+	}
+	while ((s[i] >= '0' && s[i] <= '9'))
+	{
+		rest = rest * 10 + (s[i] - '0');
+		i++;
+	}
+	return (rest * isneg);
 }

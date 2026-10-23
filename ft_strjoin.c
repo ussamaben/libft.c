@@ -10,22 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strjoin(char const *s1, char const *s2)
+#include "libft.h"
+
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    char *str;
-    size_t lens1;
-    size_t lens2;
-    size_t tot;
-    if(!s1 || !s2)
-        return(NULL);
-    lens1 = ft_strlen(s1);
-    lens2 = ft_strlen(s2);
-    tot = lens1 + lens2;
-    str = malloc((tot + 1) * sizeof(char));
-    if(!str)
-        return(NULL);
-    ft_strlcpy(str,s1,lens1);
-    ft_strlcat(str,s2,lens2);
-    return(str);
-    
+	char	*res;
+	size_t	i;
+	size_t	j;
+
+	if (!s1 || !s2)
+		return (NULL);
+	res = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!res)
+		return (NULL);
+	i = 0;
+	while (s1[i])
+	{
+		res[i] = s1[i];
+		i++;
+	}
+	j = 0;
+	while (s2[j])
+		res[i++] = s2[j++];
+	res[i] = '\0';
+	return (res);
 }

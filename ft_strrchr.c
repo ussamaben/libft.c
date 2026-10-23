@@ -10,20 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strrchr(const char *s, int c)
-{
-    unsigned char *p;
-    size_t i;
-    i = 0;
-    p = NULL;
-    while(str[i])
-    {
-        if(str[i] == c)
-            p = (unsigned char *)&str[i];
-        i++;
-    }
-    if (str[i] == c)
-        return((unsigned char *)&str[i]);
-    return((char *)p);
-}
+#include "libft.h"
 
+char	*ft_strrchr(const char *s, int c)
+{
+	int		i;
+	char	*last;
+
+	last = NULL;
+	i = 0;
+	while (s[i])
+	{
+		if ((unsigned char)s[i] == (unsigned char)c)
+			last = (char *)(s + i);
+		i++;
+	}
+	if ((unsigned char)c == '\0')
+		return ((char *)(s + i));
+	return (last);
+}

@@ -10,25 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar(char c, int fd)
 {
-    write(fd,&c,1);
+	write(fd, &c, 1);
 }
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-    if(n == -2147483648)
-    {
-        write(fd,"-2147483648",11);
-        return;
-    }
-    if (n < 0)
-    {
-        ft_putchar_fd("-");
-        n = -n;
-    }
-    if (n > 9)
-        ft_putnbr_fd(n / 10);
-    ft_putchar_fd((n % 10) + '0');
+	long	num;
+
+	num = n;
+	if (num < 0)
+	{
+		num = -num;
+		write(fd, "-", 1);
+	}
+	if (num >= 9)
+	{
+		ft_putnbr_fd(num / 10, fd);
+	}
+	ft_putchar(((num % 10) + '0'), fd);
 }

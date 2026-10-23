@@ -10,51 +10,54 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-size_t is_sep(char c, char sep)
+int	is_separator(char c, char sep)
 {
-    return(sep == c);
+	return (c == sep);
 }
 
-size_t count_word( char const *str, char sep)
+int	count_words(char *str, char sep)
 {
-    size_t count ;
-    count = 0;
-    while(*str)
-    {
-        while(*str && is_sep(*str,sep))
-            str++;
-        if (*str && !is_sep(*str,sep))
-            count++;
-        while (*str && !is_sep(*str,sep))
-            str++;
-    }
-    return(count);
+	int	count;
+
+	count = 0;
+	while (*str)
+	{
+		while (*str && is_separator(*str, sep))
+			str++;
+		if (*str && !is_separator(*str, sep))
+		{
+			count++;
+			while (*str && !is_separator(*str, sep))
+				str++;
+		}
+	}
+	return (count);
 }
 
-char *malloc_w( char const *str, char sep)
+char	*malloc_word(char *str, char sep)
 {
-    size_t len;
-    size_t i;
-    char *word;
-    len = 0;
-    i = 0;
-    while(str[len] && !is_sep(str[len],sep))
-        len++;
-    word = malloc(sizeof(char) * (len + 1));
-    if(!word)
-        return(NULL);
-    while(i < len)
-    {
-        word[i] = str[i];
-        i++;
-    }
-    word[i] = '\0';
-    return(word);
+	int		len;
+	int		i;
+	char	*word;
+
+	len = 0;
+	i = 0;
+	while (str[len] && !is_separator(str[len], sep))
+		len++;
+	word = malloc(sizeof(char) * (len + 1));
+	if (!word)
+		return (NULL);
+	while (i < len)
+	{
+		word[i] = str[i];
+		i++;
+	}
+	word[i] = '\0';
+	return (word);
 }
+
 void free_split(char **s,size_t i)
 {
     
@@ -65,58 +68,35 @@ void free_split(char **s,size_t i)
     }
     free(s);
 }
-char **ft_split(char *s,char c)
+
+char	**ft_split(char *str, char c)
 {
-    char **result;
-    size_t i;
-    i = 0;
-    if(!s)
-        return(NULL);
-    result = malloc(sizeof(char *) * (count_word(s,c) + 1));
-    if(!result)
-        return(NULL);
-    while(*s)
-    {
-        while(*s && is_sep(*s,c))
-            s++;
-        if(*s)
-        {
-            result[i] = malloc_w(s,c);
-            
-            if(!result[i])
+	char	**result;
+	int		i;
+
+	i = 0;
+	if (!str)
+		return (NULL);
+	result = malloc(sizeof(char *) * (count_words(str, c) + 1));
+	if (!result)
+		return (NULL);
+	while (*str)
+	{
+		while (*str && is_separator(*str, c))
+			str++;
+		if (*str && !is_separator(*str, c))
+		{
+			result[i] = malloc_word(str, c);
+			if(!result[i])
             {
                 free_split(result,i);
                 return(NULL);
             }
                 i++;
-            while(*s && !is_sep(*s,c))
-            s++;
-        }
-        
-    }
-    result[i] = NULL;
-    return(result);
-}
-
-int main(void)
-{
-    char s[]=" hello its my          borth";
-    char **res;
-    size_t i;
-     i = 0;
-    res = ft_split(s, ' ');
-    if(!res)
-        return(1);
-    while(res[i]){
-        printf("%s\n",res[i]);
-        i++;
-    }
-   
-    while (res[i])
-    {
-        free(res[i]);
-        i++;
-    }
-    free(res);
-    return(0);
+			while (*str && !is_separator(*str, c))
+				str++;
+		}
+	}
+	result[i] = NULL;
+	return (result);
 }

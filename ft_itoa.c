@@ -10,40 +10,46 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int len_nb(int nb)
+#include "libft.h"
+
+static int	numlen(long n)
 {
-    int len ;
-    len = 0;
-    if (nb <= 0)
-        len++;
-    while (nb)
-    {
-        len++;
-        nb = nb / 10;
-    }
-        return(len);
+	int	len;
+
+	len = 0;
+	if (n <= 0)
+		len++;
+	while (n)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
 }
-char *ft_itoa(int n)
+
+char	*ft_itoa(int n)
 {
-    int l;
-    char *str;
-    l = len_nb(n);
-    str = malloc((sizeof (char)) * (len + 1));
-    if(!str)
-        return(NULL);
-    str[l] = '\0';
-    if (n == 0)
-        str[0] = '0';
-    if(n < 0)
-    {
-        str[0] = '-';
-        n = -n;
-    }
-    while(n > 0)
-    {
-        l--;
-        str[l] = (n % 10) +'0';
-        n = n /10;
-    }
-    return(str);
+	char	*res;
+	long	num;
+	int		len;
+
+	num = n;
+	len = numlen(num);
+	res = (char *)malloc(sizeof(char) * (len + 1));
+	if (!res)
+		return (NULL);
+	res[len] = '\0';
+	if (num == 0)
+		res[0] = '0';
+	if (num < 0)
+	{
+		res[0] = '-';
+		num = -num;
+	}
+	while (num)
+	{
+		res[--len] = (num % 10) + '0';
+		num /= 10;
+	}
+	return (res);
 }
